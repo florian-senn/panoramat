@@ -63,12 +63,7 @@ export default {
       pos: 0,
       yaw: 0,
       pitch: 0,
-      gps: {
-        latitude: 0,
-        longitude: 0,
-        altitude: 0
-      },
-      coords: [],
+      coords: [{}],
       distances: [],
       bearings: []
     }
@@ -84,6 +79,9 @@ export default {
     },
     getPos: function () {
       return this.pos % this.sources.length
+    },
+    gps: function () {
+      return this.coords[this.getPos]
     }
   },
   created () {
@@ -94,7 +92,6 @@ export default {
       postProcess: true,
       mergeOutput: false
     }
-
     for (let source of this.sources) {
       console.log('Sources now')
       parse(source, options)
@@ -111,7 +108,6 @@ export default {
           })
         .then(result => {
           for (let i in this.coords) {
-            console.log('Bearing Distance now')
             this.bearings[i] = getGreatCircleBearing(this.coords[i], this.coords[(i + 1) % this.coords.length])
             this.distances[i] = getPreciseDistance(this.coords[i], this.coords[(i + 1) % this.coords.length])
           }
