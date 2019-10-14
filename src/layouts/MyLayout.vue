@@ -14,11 +14,9 @@
         <q-toolbar-title>
           {{$t('title')}}
         </q-toolbar-title>
-
         <div>Locale: {{ $i18n.locale }}</div>
       </q-toolbar>
     </q-header>
-
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
@@ -38,8 +36,12 @@ export default {
 
   data () {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      hfovOld: 0,
+      hfovNew: 0
     }
+  },
+  created () {
   }
 }
 </script>

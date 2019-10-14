@@ -14,9 +14,12 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
+    "exifr": "^2.1.1",
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0",
-    "vue-pannellum": "^0.5.0"
+    "vue-pannellum": "^0.5.0",
+    "xml2js": "^0.4.22",
+    "geolib": "^3.0.4"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
