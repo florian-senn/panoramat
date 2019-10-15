@@ -78,8 +78,17 @@ export default {
     },
     hotSpots: function () {
       let result = []
-      for (let key in this.results) {
-        this.results[key][this.getPos]
+      let results = this.results
+      let getPos = this.getPos
+      for (let bearing in results['bearings']) {
+        if (parseInt(bearing) !== parseInt(getPos)) {
+          result.push({
+            pitch: results['pitches'][getPos][bearing],
+            yaw: results['bearings'][getPos][bearing],
+            type: 'info',
+            text: getPos + ' to ' + bearing
+          })
+        }
       }
       return result
     }
@@ -91,24 +100,33 @@ export default {
         let bearings = []
         let distances = []
         let deltas = []
+        let pitches = []
         for (let i in results) {
           let tempBearing = []
           let tempDistance = []
           let tempDelta = []
+          let tempPitch = []
           for (let k in results) {
             tempBearing[k] = getGreatCircleBearing(results[i], results[k])
             tempDistance[k] = getPreciseDistance(results[i], results[k])
             tempDelta[k] = results[k].altitude - results[i].altitude
+            if (i !== k) {
+              tempPitch[k] = Math.atan(tempDelta[k] / tempDistance[k]) * 90
+            } else {
+              tempPitch[k] = 0
+            }
           }
           this.coords.push(results[i])
           bearings[i] = tempBearing
           distances[i] = tempDistance
           deltas[i] = tempDelta
+          pitches[i] = tempPitch
         }
         this.results = {
           bearings: bearings,
           distances: distances,
-          deltas: deltas
+          deltas: deltas,
+          pitches: pitches
         }
       })
     function parseAsync (source) {
