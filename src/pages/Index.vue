@@ -6,6 +6,7 @@
       :hfov.sync="hfov"
       :yaw.sync="yaw"
       :pitch.sync="pitch"
+      :hot-spots="hotSpots"
     />
     <q-btn
       @click="nextPanorama"
@@ -57,11 +58,6 @@ export default {
         bearings: [],
         distances: [],
         deltas: []
-      },
-      selection: {
-        type: null,
-        length1: 0,
-        length2: 0
       }
     }
   },
@@ -79,6 +75,13 @@ export default {
     },
     gps: function () {
       return this.coords[this.getPos]
+    },
+    hotSpots: function () {
+      let result = []
+      for (let key in this.results) {
+        this.results[key][this.getPos]
+      }
+      return result
     }
   },
   mounted () {
@@ -97,6 +100,7 @@ export default {
             tempDistance[k] = getPreciseDistance(results[i], results[k])
             tempDelta[k] = results[k].altitude - results[i].altitude
           }
+          this.coords.push(results[i])
           bearings[i] = tempBearing
           distances[i] = tempDistance
           deltas[i] = tempDelta
