@@ -36,9 +36,7 @@ export default {
 
   data () {
     return {
-      leftDrawerOpen: false,
-      hfovOld: 0,
-      hfovNew: 0
+      leftDrawerOpen: false
     }
   },
   created () {

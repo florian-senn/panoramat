@@ -31,8 +31,7 @@
 
 <script>
 import VuePannellum from 'vue-pannellum'
-import { parse } from 'exifr'
-// import Xml from 'xml2js'
+import { parseDjiMeta } from '../mixins/metadata-parser'
 import { getGreatCircleBearing, getPreciseDistance } from 'geolib'
 
 export default {
@@ -134,22 +133,32 @@ export default {
         }
       })
     function parseAsync (source) {
-      let options = {
-        exif: false,
-        xmp: true,
-        iptc: true,
-        postProcess: true,
-        mergeOutput: false
-      }
       return new Promise(
         function (resolve, reject) {
-          parse(source, options)
-            .then(
-              result => {
-                resolve({ latitude: result.gps.latitude, longitude: result.gps.longitude, altitude: result.gps.GPSAltitude }
-                )
+          fetch(source)
+            .then(response => response.arrayBuffer())
+            .then(arrayBuffer => {
+              let buffer = Buffer.alloc(arrayBuffer.byteLength)
+              let view = new Uint8Array(arrayBuffer)
+              for (let i = 0; i < buffer.length; ++i) {
+                buffer[i] = view[i]
+              }
+              return buffer
+            })
+            .then(buffer => parseDjiMeta(buffer))
+            .then(data => {
+              resolve({
+                latitude: parseFloat(data.raw['drone-dji:GpsLatitude']),
+                longitude: parseFloat(data.raw['drone-dji:GpsLongitude']),
+                altitude: parseFloat(data.raw['drone-dji:AbsoluteAltitude']),
+                gimbal: {
+                  pitch: parseFloat(data.raw['drone-dji:GimbalPitchDegree']),
+                  yaw: parseFloat(data.raw['drone-dji:GimbalYawDegree']),
+                  roll: parseFloat(data.raw['drone-dji:GimbalRollDegree'])
+                }
               })
-            .catch()
+            })
+            .catch(error => { console.log(error) })
         }
       )
     }
