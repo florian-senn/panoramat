@@ -43,6 +43,10 @@ export default {
   data () {
     return {
       sources: [
+        'statics/panorama/panorama1.jpg',
+        'statics/panorama/panorama2.jpg',
+        'statics/panorama/panorama3.jpg',
+        'statics/panorama/pan1.jpg',
         'statics/panorama/pan1.jpg',
         'statics/panorama/pan2.jpg',
         'statics/panorama/pan3.jpg',
@@ -111,7 +115,7 @@ export default {
             tempDistance[k] = getPreciseDistance(results[i], results[k])
             tempDelta[k] = results[k].altitude - results[i].altitude
             if (i !== k) {
-              tempPitch[k] = Math.atan(tempDelta[k] / tempDistance[k]) * 90
+              tempPitch[k] = Math.atan(tempDelta[k] / tempDistance[k]) * 180 / Math.PI
             } else {
               tempPitch[k] = 0
             }
