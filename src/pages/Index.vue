@@ -31,8 +31,9 @@
 
 <script>
 import VuePannellum from 'vue-pannellum'
-import { parseDjiMeta } from '../mixins/metadata-parser'
 import { getGreatCircleBearing, getPreciseDistance } from 'geolib'
+// import { retlog } from '../mixins/retlog'
+import { parseText } from 'dji-xmetaparser'
 
 export default {
   name: 'PageIndex',
@@ -119,12 +120,16 @@ export default {
               tempPitch[k] = 0
             }
           }
-          this.coords.push(results[i])
           bearings[i] = tempBearing
           distances[i] = tempDistance
           deltas[i] = tempDelta
           pitches[i] = tempPitch
         }
+        let acc = {}
+        for (const result of results) {
+          acc[Object.keys(result)[0]] = result[Object.keys(result)[0]]
+        }
+        this.coords = acc
         this.results = {
           bearings: bearings,
           distances: distances,
@@ -132,33 +137,30 @@ export default {
           pitches: pitches
         }
       })
+      .catch()
     function parseAsync (source) {
       return new Promise(
         function (resolve, reject) {
           fetch(source)
-            .then(response => response.arrayBuffer())
-            .then(arrayBuffer => {
-              let buffer = Buffer.alloc(arrayBuffer.byteLength)
-              let view = new Uint8Array(arrayBuffer)
-              for (let i = 0; i < buffer.length; ++i) {
-                buffer[i] = view[i]
-              }
-              return buffer
-            })
-            .then(buffer => parseDjiMeta(buffer))
+            .then(response => response.blob())
+            .then(blob => blob.text())
+            .then(text => parseText(text))
             .then(data => {
-              resolve({
-                latitude: parseFloat(data.raw['drone-dji:GpsLatitude']),
-                longitude: parseFloat(data.raw['drone-dji:GpsLongitude']),
-                altitude: parseFloat(data.raw['drone-dji:AbsoluteAltitude']),
+              resolve({ [source]: {
+                gps: {
+                  latitude: data['droneDji']['gpsLatitude'],
+                  longitude: data['droneDji']['gpsLongitude'],
+                  altitude: data['droneDji']['absoluteAltitude']
+                },
                 gimbal: {
-                  pitch: parseFloat(data.raw['drone-dji:GimbalPitchDegree']),
-                  yaw: parseFloat(data.raw['drone-dji:GimbalYawDegree']),
-                  roll: parseFloat(data.raw['drone-dji:GimbalRollDegree'])
+                  pitch: data['droneDji']['gimbalPitchDegree'],
+                  yaw: data['droneDji']['gimbalYawDegree'],
+                  roll: data['droneDji']['gimbalRollDegree']
                 }
+              }
               })
             })
-            .catch(error => { console.log(error) })
+            .catch()
         }
       )
     }
