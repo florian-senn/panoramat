@@ -2,5 +2,6 @@ export default {
   title: 'PanoramAT',
   failed: 'Fehlgeschlagen',
   success: 'Erfolgreich',
-  next: 'Nächstes'
+  next: 'Nächstes',
+  previous: 'Vorheriges'
 }
