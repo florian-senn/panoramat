@@ -7002,10 +7002,10 @@ qs@~6.5.2:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
-quasar-app-extension-ide-helper@^1.0.0-alpha.2:
-  version "1.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/quasar-app-extension-ide-helper/-/quasar-app-extension-ide-helper-1.0.0-alpha.2.tgz#399b017c2b4ec8d398790cce5e2b67063f3f51a7"
-  integrity sha512-s6VPZWM2xNMkFxp6eacPjaDIeVaEl1KUdsF+dOeCfM29AO1i+u8ahveQSDJ4eOZCe2ZMvuWigRWJFzEKpl2bPg==
+quasar-app-extension-ide-helper@^1.0.0-alpha.3:
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/quasar-app-extension-ide-helper/-/quasar-app-extension-ide-helper-1.0.0-alpha.3.tgz#5072f8c652031903cc31e2c6433e595520e24e33"
+  integrity sha512-P30Fs8dqfnaVoPJJdLwfBLferZQ79QGGXgS4jFa283YE+jU0ZZgH1B7XTnfnta53vE08FNmLk4elBSf3UdGfNA==
   dependencies:
     xml-escape "^1.1.0"
 
