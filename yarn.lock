@@ -989,14 +989,6 @@
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-5.7.1.tgz#4c4c1d4d891b6b8c2c3c7b367d306a8b1350f090"
   integrity sha512-tbUnTYlSliXvnou5D4C8Zr+7/wJrHLbpYX1YkLXuIJRU0NSi81bHMroAuHWILcQKWhVjaV/HZzr7Y/hhWtbXVQ==
 
-"@sentry/utils@5.7.1":
-  version "5.7.1"
-  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-5.7.1.tgz#cf37ad55f78e317665cd8680f202d307fa77f1d0"
-  integrity sha512-nhirUKj/qFLsR1i9kJ5BRvNyzdx/E2vorIsukuDrbo8e3iZ11JMgCOVrmC8Eq9YkHBqgwX4UnrPumjFyvGMZ2Q==
-  dependencies:
-    "@sentry/types" "5.7.1"
-    tslib "^1.9.3"
-
 "@sentry/utils@5.8.0":
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-5.8.0.tgz#34683088159b9935f973b6e6cad1a1cc26bbddac"
@@ -7009,10 +7001,10 @@ quasar-app-extension-ide-helper@^1.0.0-alpha.3:
   dependencies:
     xml-escape "^1.1.0"
 
-quasar@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-1.4.1.tgz#834198a3b2d53d88825d4dc5e7c9171b52048c79"
-  integrity sha512-+uzDt2C6K+iZx8S6eohzPXhrf7vwzC5QLoBfLwmC/JHowZ4GLNIrFY2bayScR9AzMtw1Ll9hzILmHfsJwieDOA==
+quasar@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/quasar/-/quasar-1.4.3.tgz#c7d52eeeac2c4f507038368d18897fd62a49c365"
+  integrity sha512-0647iJgyF52R35RWQcIHfWz8phA5XbCb46TM2R93JnyguYxoxBpG7vIU5ltgc8huKcRYpvlz+DHUd317WjsMPw==
 
 query-string@^4.1.0:
   version "4.3.4"
