@@ -6233,9 +6233,9 @@ pako@~1.0.5:
   integrity sha512-0DTvPVU3ed8+HNXOu5Bs+o//Mbdj9VNQMUOe9oKCwh8l0GNwpTDMKCWbRjgtD291AWnkAgkqA/LOnQS8AmS1tw==
 
 pannellum@^2.5.2:
-  version "2.5.4"
-  resolved "https://registry.yarnpkg.com/pannellum/-/pannellum-2.5.4.tgz#1bb98d97a90ad0d5f13b2074c5131236f5a67d73"
-  integrity sha512-WBsua0hwLhMXMJsyru/8hNVZXOEZaqx1422T2GIiNqMG2NF1rie5mfOCUgBqlTrF1y9nU02rr3tGizW171qxKA==
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/pannellum/-/pannellum-2.5.5.tgz#9c735c564439631f5a7defb2969461617f27d1d6"
+  integrity sha512-OfCdo05ZkLuGOr2cFQmI1PDCJtBB49xJsP+BCBpC5shOH1EV1LVbvEP8sjUgmD0cr+UkcdQDpQ/OLrEw4WgXZQ==
 
 parallel-transform@^1.1.0:
   version "1.2.0"
