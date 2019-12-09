@@ -18,7 +18,7 @@
     "axios": "^0.19.0",
     "dji-xmetaparser": "^1.0.0",
     "geolib": "^3.1.0",
-    "logrocket": "^1.0.4",
+    "logrocket": "^1.0.5",
     "logrocket-vuex": "^0.0.3",
     "quasar": "^1.5.4",
     "vue-i18n": "^8.15.1",
