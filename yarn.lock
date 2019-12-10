@@ -7070,10 +7070,10 @@ quasar-app-extension-ide-helper@^1.0.0-alpha.3:
   dependencies:
     xml-escape "^1.1.0"
 
-quasar@^1.5.4:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-1.5.4.tgz#9687347603521931c34fa0cf0679d1c2417bf203"
-  integrity sha512-B3WVyXddjiJ1TpEv/ZTVFoiMSzCgLtIuCA+sXFuPqi8vENWnbmwPRvJPGPaz5ghw1mi+0TAoDL1zKpY2quXjZg==
+quasar@^1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/quasar/-/quasar-1.5.7.tgz#b21ae7858513a75175435bb889e24c570bf4bf9c"
+  integrity sha512-b/0LDYS5SleQUCb92yxLGrakpv5Bssl61mmxYqABootOU1rSytFjupkC2+hB+KBtWvjgGhjpty+Kir8/0X78zA==
 
 query-string@^4.1.0:
   version "4.3.4"
