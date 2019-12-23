@@ -20,7 +20,7 @@
     "geolib": "^3.2.0",
     "logrocket": "^1.0.5",
     "logrocket-vuex": "^0.0.3",
-    "quasar": "^1.5.9",
+    "quasar": "^1.5.11",
     "vue-i18n": "^8.15.3",
     "vue-pannellum": "^0.5.0"
   },
