@@ -926,10 +926,10 @@
     babel-plugin-module-resolver "^3.2.0"
     babel-plugin-transform-imports "^1.0.0"
 
-"@quasar/extras@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@quasar/extras/-/extras-1.4.0.tgz#e273e0610f4f22482ac49934ce4426260c08e49d"
-  integrity sha512-ouhk4dWkPYWCjBZU+xN9/55O3Bszn1MDpFSFCtcGQXVe6VrmIvE/wE09YD+cp4PZdzsQZZiiTftziyoCzdy2Qg==
+"@quasar/extras@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@quasar/extras/-/extras-1.4.1.tgz#93f816febca2a985ce57efe308e8d262c766faab"
+  integrity sha512-1CcupUAyX5bQEax24nQIsQzYkJ6H835JOzJumDUonHZTYe4zXzMpvuoT47F8qkUlRgN3loKqujf3O3it1sWZcQ==
 
 "@quasar/fastclick@1.1.4":
   version "1.1.4"
