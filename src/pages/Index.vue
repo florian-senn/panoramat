@@ -46,7 +46,8 @@
 <script>
 import VuePannellum from 'vue-pannellum'
 import { getGreatCircleBearing, getPreciseDistance } from 'geolib'
-import { parseText } from 'dji-xmetaparser'
+import * as Exifr from 'exifr'
+import * as Xml from 'xml2js'
 
 const imgixBaseUrl = 'https://panoramat.imgix.net/'
 
@@ -87,7 +88,7 @@ export default {
       },
       resolution: 0.5,
       quality: 75,
-      suffix: '?auto=compress'
+      suffix: '?auto=compress,format'
     }
   },
   methods: {
@@ -141,39 +142,36 @@ export default {
   },
   mounted () {
     let parseAsync = source => {
-      return new Promise(
-        (resolve, reject) => {
-          fetch(source)
-            .then(response => response.blob())
-            .then(blob => blob.text())
-            .then(text => parseText(text))
-            .then(data => {
-              resolve({
-                [source]: {
-                  gps: {
-                    latitude: data['droneDji']['gpsLatitude'],
-                    longitude: data['droneDji']['gpsLongitude'],
-                    altitude: data['droneDji']['absoluteAltitude']
-                  },
-                  gimbal: {
-                    pitch: data['droneDji']['gimbalPitchDegree'],
-                    yaw: data['droneDji']['gimbalYawDegree'],
-                    roll: data['droneDji']['gimbalRollDegree']
-                  }
-                }
-              })
-            })
-            .catch()
-        }
-      )
+      return Exifr.parse(source, { xmp: true, tiff: false })
+        .then(xml => Xml.parseStringPromise(xml.xmp))
+        .then(json => json['x:xmpmeta']['rdf:RDF'][0]['rdf:Description'][0]['$'])
+        .then(data => {
+          return {
+            [source]: {
+              gps: {
+                latitude: Number(data['drone-dji:GpsLatitude']),
+                longitude: Number(data['drone-dji:GpsLongitude']),
+                altitude: Number(data['drone-dji:AbsoluteAltitude'])
+              },
+              gimbal: {
+                pitch: Number(data['drone-dji:GimbalPitchDegree']),
+                yaw: Number(data['drone-dji:GimbalYawDegree']),
+                roll: Number(data['drone-dji:GimbalRollDegree'])
+              }
+            }
+          }
+        })
+        .catch()
     }
     const results = this.sources.map(parseAsync)
     Promise.all(results)
       .then(results => {
+        console.log(results)
         let acc = {}
         for (const result of results) {
           acc[Object.keys(result)[0]] = result[Object.keys(result)[0]]
         }
+        console.log(acc)
         this.coords = acc
         results = acc
         let bearings = {}
