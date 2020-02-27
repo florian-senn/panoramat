@@ -7,34 +7,39 @@
       :yaw.sync="yaw"
       :pitch.sync="pitch"
       :hot-spots="hotSpots"
-      slot
-    >
-      <div style="background-color: white">
-        <q-btn
+    />
+    <div style="background-color: white; position: absolute; left: 0; bottom: 0; ">
+      <q-btn
         @click="prevPanorama"
         :label="$t('previous')"
-        />
-        <q-btn
+      />
+      <q-btn
         @click="nextPanorama"
         :label="$t('next')"
       />
-        <div class="q-pa-md">
-          <q-badge>
-            hfov: {{hfov|round}}
-          </q-badge>
-          <q-badge>
-            pitch: {{pitch|round}}
-          </q-badge>
-          <q-badge>
-            yaw: {{yaw|round}}
-          </q-badge>
-          <q-slider :step="0.1" label v-model="hfov" :min="30" :max="120"/>
-          <q-slider :step="0.1" label v-model="pitch" :min="-90" :max="90"/>
-          <q-slider :step="0.1" label v-model="yaw" :min="-180" :max="180"/>
-          <q-slider :step="0.1" label v-model="offset" :min="-90" :max="90"/>
-        </div>
+      <div class="q-pa-md">
+        <q-badge>
+          {{$t('hfov')}}: {{hfov|round}}
+        </q-badge>
+        <q-slider :step="0.1" label v-model="hfov" :min="30" :max="120"/>
+        <q-badge>
+          {{$t('pitch')}}: {{pitch|round}}
+        </q-badge>
+        <q-slider :step="0.1" label v-model="pitch" :min="-90" :max="90"/>
+        <q-badge>
+          {{$t('yaw')}}: {{yaw|round}}
+        </q-badge>
+        <q-slider :step="0.1" label v-model="yaw" :min="-180" :max="180"/>
+        <q-badge>
+          {{$t('resolution')}}: {{resolution}}
+        </q-badge>
+        <q-slider :step="0.1" label v-model="resolution" :min="0.2" :max="1"/>
+        <q-badge>
+          {{$t('quality')}}: {{quality}}
+        </q-badge>
+        <q-slider :step="10" label v-model="quality" :min="30" :max="100"/>
       </div>
-    </v-pannellum>
+    </div>
   </q-page>
 </template>
 
@@ -70,7 +75,6 @@ export default {
         'statics/panorama/pano1.jpg',
         'statics/panorama/pano2.jpg'
       ],
-      offset: 0,
       hfov: 120,
       pos: 0,
       yaw: 0,
@@ -80,7 +84,10 @@ export default {
         bearings: {},
         distances: {},
         deltas: {}
-      }
+      },
+      resolution: 0.5,
+      quality: 75,
+      suffix: '?auto=compress'
     }
   },
   methods: {
@@ -90,13 +97,16 @@ export default {
     nextPanorama: function () {
       this.pos++
     },
-    srcToImgix: function (source) {
-      return imgixBaseUrl + source + '?auto=compress&width=0.5'
+    srcToImgix: function (source, suffix) {
+      return imgixBaseUrl + source + suffix + '&w=' + this.resolution + '&q=' + this.quality
     }
   },
   computed: {
     src: function () {
-      return this.srcToImgix(this.sources[this.getPos])
+      return this.srcToImgix(this.rawSrc, this.suffix)
+    },
+    rawSrc: function () {
+      return this.sources[this.getPos]
     },
     getPos: function () {
       return (this.pos.mod(this.sources.length))
@@ -107,7 +117,7 @@ export default {
     hotSpots: function () {
       let result = []
       let results = this.results
-      let src = this.src
+      let src = this.rawSrc
       for (let bearing in results['bearings']) {
         if (bearing !== src) {
           result.push({
@@ -121,7 +131,7 @@ export default {
       if (this.coords[src]) {
         result.push(({
           pitch: 0,
-          yaw: (-this.coords[src].gimbal.yaw) + this.offset,
+          yaw: (-this.coords[src].gimbal.yaw),
           type: 'info',
           text: 'Norden'
         }))
@@ -129,12 +139,34 @@ export default {
       return result
     }
   },
-  watch: {
-    offset: function (newOffset, oldOffset) {
-      this.hotSpots[this.hotSpots.length - 1].yaw = newOffset
-    }
-  },
   mounted () {
+    let parseAsync = source => {
+      return new Promise(
+        (resolve, reject) => {
+          fetch(source)
+            .then(response => response.blob())
+            .then(blob => blob.text())
+            .then(text => parseText(text))
+            .then(data => {
+              resolve({
+                [source]: {
+                  gps: {
+                    latitude: data['droneDji']['gpsLatitude'],
+                    longitude: data['droneDji']['gpsLongitude'],
+                    altitude: data['droneDji']['absoluteAltitude']
+                  },
+                  gimbal: {
+                    pitch: data['droneDji']['gimbalPitchDegree'],
+                    yaw: data['droneDji']['gimbalYawDegree'],
+                    roll: data['droneDji']['gimbalRollDegree']
+                  }
+                }
+              })
+            })
+            .catch()
+        }
+      )
+    }
     const results = this.sources.map(parseAsync)
     Promise.all(results)
       .then(results => {
@@ -176,33 +208,6 @@ export default {
         }
       })
       .catch()
-    function parseAsync (source) {
-      return new Promise(
-        function (resolve, reject) {
-          fetch(source)
-            .then(response => response.blob())
-            .then(blob => blob.text())
-            .then(text => parseText(text))
-            .then(data => {
-              resolve({
-                [source]: {
-                  gps: {
-                    latitude: data['droneDji']['gpsLatitude'],
-                    longitude: data['droneDji']['gpsLongitude'],
-                    altitude: data['droneDji']['absoluteAltitude']
-                  },
-                  gimbal: {
-                    pitch: data['droneDji']['gimbalPitchDegree'],
-                    yaw: data['droneDji']['gimbalYawDegree'],
-                    roll: data['droneDji']['gimbalRollDegree']
-                  }
-                }
-              })
-            })
-            .catch()
-        }
-      )
-    }
   },
   filters: {
     round: function (value, count = 1) {

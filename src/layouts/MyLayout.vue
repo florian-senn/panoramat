@@ -5,7 +5,6 @@
         <q-toolbar-title>
           {{$t('title')}}
         </q-toolbar-title>
-        <div>Locale: {{ $i18n.locale }}</div>
       </q-toolbar>
     </q-header>
     <q-page-container>
