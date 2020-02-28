@@ -166,12 +166,10 @@ export default {
     const results = this.sources.map(parseAsync)
     Promise.all(results)
       .then(results => {
-        console.log(results)
         let acc = {}
         for (const result of results) {
           acc[Object.keys(result)[0]] = result[Object.keys(result)[0]]
         }
-        console.log(acc)
         this.coords = acc
         results = acc
         let bearings = {}
