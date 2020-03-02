@@ -12,19 +12,19 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@fsenn/vue-pannellum": "^0.6.0",
     "@quasar/extras": "^1.5.1",
     "@sentry/browser": "^5.12.5",
     "@sentry/integrations": "^5.12.4",
     "axios": "^0.19.2",
     "dji-xmetaparser": "^1.0.0",
     "exifr": "^3.0.1",
-    "xml2js": "^0.4.23",
     "geolib": "^3.2.1",
     "logrocket": "^1.0.6",
     "logrocket-vuex": "^0.0.3",
     "quasar": "^1.9.4",
     "vue-i18n": "^8.15.4",
-    "vue-pannellum": "^0.5.0"
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "@quasar/app": "^1.5.8",

@@ -7,6 +7,8 @@
       :yaw.sync="yaw"
       :pitch.sync="pitch"
       :hot-spots="hotSpots"
+      compass
+      :northOffset="offset"
     />
     <div style="background-color: white; position: absolute; left: 0; bottom: 0; ">
       <q-btn
@@ -44,7 +46,7 @@
 </template>
 
 <script>
-import VuePannellum from 'vue-pannellum'
+import VuePannellum from '@fsenn/vue-pannellum'
 import { getGreatCircleBearing, getPreciseDistance } from 'geolib'
 import * as Exifr from 'exifr'
 import * as Xml from 'xml2js'
@@ -52,7 +54,7 @@ import * as Xml from 'xml2js'
 const imgixBaseUrl = 'https://panoramat.imgix.net/'
 
 // eslint-disable-next-line no-extend-native
-Number.prototype.mod = function (n) {
+Number.prototype.mod = (n) => {
   return ((this % n) + n) % n
 }
 
@@ -92,40 +94,40 @@ export default {
     }
   },
   methods: {
-    prevPanorama: function () {
+    prevPanorama () {
       this.pos--
     },
-    nextPanorama: function () {
+    nextPanorama () {
       this.pos++
     },
-    srcToImgix: function (source, suffix) {
+    srcToImgix (source, suffix) {
       return imgixBaseUrl + source + suffix + '&w=' + this.resolution + '&q=' + this.quality
     }
   },
   computed: {
-    src: function () {
+    src () {
       return this.srcToImgix(this.rawSrc, this.suffix)
     },
-    rawSrc: function () {
+    rawSrc () {
       return this.sources[this.getPos]
     },
-    getPos: function () {
+    getPos () {
       return (this.pos.mod(this.sources.length))
     },
-    gps: function () {
+    gps () {
       return this.coords[this.getPos]
     },
-    hotSpots: function () {
+    hotSpots () {
       let result = []
       let results = this.results
       let src = this.rawSrc
-      for (let bearing in results['bearings']) {
-        if (bearing !== src) {
+      for (let target in results['bearings']) {
+        if (target !== src) {
           result.push({
-            pitch: results['pitches'][src][bearing],
-            yaw: (results['bearings'][src][bearing] - this.coords[src].gimbal.yaw) + this.offset,
+            pitch: results['pitches'][src][target],
+            yaw: (results['bearings'][src][target] - this.coords[src].gimbal.yaw) + this.offset,
             type: 'info',
-            text: src + ' to ' + bearing
+            text: src + ' to ' + target
           })
         }
       }
@@ -138,6 +140,9 @@ export default {
         }))
       }
       return result
+    },
+    northOffset () {
+      return 0
     }
   },
   mounted () {
@@ -206,7 +211,7 @@ export default {
       .catch()
   },
   filters: {
-    round: function (value, count = 1) {
+    round (value, count = 1) {
       if (!value) return '0.0'
       return value.toFixed(count)
     }
