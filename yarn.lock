@@ -3879,10 +3879,10 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-exifr@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/exifr/-/exifr-3.0.1.tgz#74c193e8c060d115ac697a794fdf1f6c4f972442"
-  integrity sha512-o6hhH6/ewgyyr5ssIpWy1mgAW2OTxDWw2+s/a3ODwMkHsLEuM8xtGbUKLCU8uz45Jiq6VOUy+AH5W2MSB/+f0A==
+exifr@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/exifr/-/exifr-4.0.0.tgz#d2b864ee54d18b1895ad65ce7bdce0b83370bb77"
+  integrity sha512-e22pnkFSufqfLPMzE75B6pF2SkKCXE5kuC2KNxN58Au3X1S6AD81SKMxCD9BM2aDm1TpJBcD0xK+PZJa45SR2A==
 
 expand-brackets@^2.1.4:
   version "2.1.4"
