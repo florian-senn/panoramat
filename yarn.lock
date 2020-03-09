@@ -3871,10 +3871,10 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-exifr@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/exifr/-/exifr-4.0.0.tgz#d2b864ee54d18b1895ad65ce7bdce0b83370bb77"
-  integrity sha512-e22pnkFSufqfLPMzE75B6pF2SkKCXE5kuC2KNxN58Au3X1S6AD81SKMxCD9BM2aDm1TpJBcD0xK+PZJa45SR2A==
+exifr@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/exifr/-/exifr-4.2.0.tgz#897df0d720474552790b2f6a7311e77f34ae5b00"
+  integrity sha512-42sHyLz/6HiD5iXrCaNk6J9/UAph91QQ5ovw65rg+n/knY3kWFIzekIIlyKg6F9PtJJh5gi05BKbwj/nPVxtoA==
 
 expand-brackets@^2.1.4:
   version "2.1.4"
