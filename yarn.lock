@@ -1076,13 +1076,13 @@
     "@sentry/utils" "5.13.2"
     tslib "^1.9.3"
 
-"@sentry/integrations@^5.13.2":
-  version "5.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/integrations/-/integrations-5.13.2.tgz#baa40414c7d23ab168b3660d577543468e1f6b76"
-  integrity sha512-/sd1hR8uKVE75mShTfZNHlNp8BExvRQH410/opLZi6Eoo5JIk0DXAxGJungncwunjueu6WLaTo53HhIg2w87gg==
+"@sentry/integrations@^5.14.1":
+  version "5.14.1"
+  resolved "https://registry.yarnpkg.com/@sentry/integrations/-/integrations-5.14.1.tgz#fc01dcd9822cd352958bba3d0647455439348e64"
+  integrity sha512-FQUiW2PHnlq5AMm+F0Ms7Tig8DflbtKPRXshj7g0UqD3uGwibcQqqI3M7XKXQOBQPvF39Zvpv74QKkWPUO+OUg==
   dependencies:
-    "@sentry/types" "5.13.2"
-    "@sentry/utils" "5.13.2"
+    "@sentry/types" "5.14.1"
+    "@sentry/utils" "5.14.1"
     tslib "^1.9.3"
 
 "@sentry/minimal@5.13.2":
@@ -1099,12 +1099,25 @@
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-5.13.2.tgz#8e68c31f8fb99b4074374bff13ed01035b373d8c"
   integrity sha512-mgAEQyc77PYBnAjnslSXUz6aKgDlunlg2c2qSK/ivKlEkTgTWWW/dE76++qVdrqM8SupnqQoiXyPDL0wUNdB3g==
 
+"@sentry/types@5.14.1":
+  version "5.14.1"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-5.14.1.tgz#564f9b703c06c2a97e756f60a3c873b977b2bbd2"
+  integrity sha512-Eht+qI68BxELKQRnaV6q1PxS9/E+YatUHjG80ov9/azLbIJElQhWUDzyyJCefDD/fEI37VQ2SrsQsVqS9W7ZOQ==
+
 "@sentry/utils@5.13.2":
   version "5.13.2"
   resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-5.13.2.tgz#441594f4f9412bfd1690739ce986bf3a49687806"
   integrity sha512-LwPQl6WRMKEnd16kg35HS3yE+VhBc8vN4+BBIlrgs7X0aoT+AbEd/sQLMisDgxNboCF44Ho3RCKtztiPb9blqg==
   dependencies:
     "@sentry/types" "5.13.2"
+    tslib "^1.9.3"
+
+"@sentry/utils@5.14.1":
+  version "5.14.1"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-5.14.1.tgz#577a9dd7b5f4b3436e8e2847d058547eab2ed5c4"
+  integrity sha512-iCN5p+ArPVMkt09bRfYuldtKSTQEqRfNuoCxPFJKDfMyLO9YetIwRCwHluIRoJoEIFE4JTM2F4HfmTsxoTqw4g==
+  dependencies:
+    "@sentry/types" "5.14.1"
     tslib "^1.9.3"
 
 "@sindresorhus/is@^0.14.0":
