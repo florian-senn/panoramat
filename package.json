@@ -15,7 +15,7 @@
     "@fsenn/vue-pannellum": "^0.6.0",
     "@quasar/extras": "^1.6.0",
     "@sentry/browser": "^5.13.2",
-    "@sentry/integrations": "^5.13.2",
+    "@sentry/integrations": "^5.14.2",
     "axios": "^0.19.2",
     "dji-xmetaparser": "^1.0.0",
     "exifr": "^4.3.4",
