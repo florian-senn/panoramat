@@ -17,11 +17,8 @@
     "@sentry/browser": "^5.13.2",
     "@sentry/integrations": "^5.15.0",
     "axios": "^0.19.2",
-    "dji-xmetaparser": "^1.0.0",
     "exifr": "^4.3.5",
     "geolib": "^3.2.1",
-    "logrocket": "^1.0.6",
-    "logrocket-vuex": "^0.0.3",
     "quasar": "^1.9.11",
     "vue-i18n": "^8.15.6",
     "xml2js": "^0.4.23"

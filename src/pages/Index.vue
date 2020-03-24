@@ -54,7 +54,7 @@ import * as Xml from 'xml2js'
 const imgixBaseUrl = 'https://panoramat.imgix.net/'
 
 // eslint-disable-next-line no-extend-native
-Number.prototype.mod = (n) => {
+Number.prototype.mod = function (n) {
   return ((this % n) + n) % n
 }
 
@@ -94,30 +94,30 @@ export default {
     }
   },
   methods: {
-    prevPanorama () {
+    prevPanorama: function () {
       this.pos--
     },
-    nextPanorama () {
+    nextPanorama: function () {
       this.pos++
     },
-    srcToImgix (source, suffix) {
+    srcToImgix: function (source, suffix) {
       return imgixBaseUrl + source + suffix + '&w=' + this.resolution + '&q=' + this.quality
     }
   },
   computed: {
-    src () {
+    src: function () {
       return this.srcToImgix(this.rawSrc, this.suffix)
     },
-    rawSrc () {
+    rawSrc: function () {
       return this.sources[this.getPos]
     },
-    getPos () {
+    getPos: function () {
       return (this.pos.mod(this.sources.length))
     },
-    gps () {
+    gps: function () {
       return this.coords[this.getPos]
     },
-    hotSpots () {
+    hotSpots: function () {
       let result = []
       let results = this.results
       let src = this.rawSrc
