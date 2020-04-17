@@ -20,7 +20,7 @@
     "exifr": "^4.3.5",
     "geolib": "^3.2.1",
     "quasar": "^1.9.14",
-    "vue-i18n": "^8.17.0",
+    "vue-i18n": "^8.17.1",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
