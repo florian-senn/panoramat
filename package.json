@@ -18,7 +18,7 @@
     "@sentry/integrations": "^5.15.5",
     "axios": "^0.19.2",
     "exifr": "^5.0.2",
-    "geolib": "^3.2.1",
+    "geolib": "^3.3.1",
     "vue-i18n": "^8.17.7",
     "quasar": "^1.11.1",
     "xml2js": "^0.4.23"
