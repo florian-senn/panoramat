@@ -3,8 +3,6 @@
   "version": "0.0.1",
   "description": "Build your Panorama Tour",
   "productName": "PanoramAt",
-  "cordovaId": "org.cordova.quasar.app",
-  "capacitorId": "",
   "author": "Florian Senn <github@senn.bz>",
   "private": true,
   "scripts": {
@@ -19,18 +17,19 @@
     "axios": "^0.19.2",
     "exifr": "^5.0.2",
     "geolib": "^3.3.1",
-    "vue-i18n": "^8.18.2",
     "quasar": "^1.12.7",
+    "vue-i18n": "^8.18.2",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "@quasar/app": "^2.0.0",
+    "@quasar/app": "2.0.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-vue": "^6.2.2",
-    "quasar-app-extension-ide-helper": "^1.0.0"
+    "quasar-app-extension-ide-helper": "^1.0.0",
+    "workbox-webpack-plugin": "5.0.0"
   },
   "optionalDependencies": {},
   "engines": {
@@ -39,6 +38,14 @@
     "yarn": ">= 1.6.0"
   },
   "browserslist": [
-    "last 1 version, not dead, ie >= 11"
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
   ]
 }

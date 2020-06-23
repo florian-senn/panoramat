@@ -66,17 +66,17 @@ export default {
   data () {
     return {
       sources: [
-        'statics/panorama/panorama1.jpg',
-        'statics/panorama/panorama2.jpg',
-        'statics/panorama/panorama3.jpg',
-        'statics/panorama/pan1.jpg',
-        'statics/panorama/pan1.jpg',
-        'statics/panorama/pan2.jpg',
-        'statics/panorama/pan3.jpg',
-        'statics/panorama/pan4.jpg',
-        'statics/panorama/pan5.jpg',
-        'statics/panorama/pano1.jpg',
-        'statics/panorama/pano2.jpg'
+        'panorama/panorama1.jpg',
+        'panorama/panorama2.jpg',
+        'panorama/panorama3.jpg',
+        'panorama/pan1.jpg',
+        'panorama/pan1.jpg',
+        'panorama/pan2.jpg',
+        'panorama/pan3.jpg',
+        'panorama/pan4.jpg',
+        'panorama/pan5.jpg',
+        'panorama/pano1.jpg',
+        'panorama/pano2.jpg'
       ],
       hfov: 120,
       pos: 0,
