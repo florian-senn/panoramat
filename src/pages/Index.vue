@@ -49,7 +49,6 @@
 import VuePannellum from '@fsenn/vue-pannellum'
 import { getGreatCircleBearing, getPreciseDistance } from 'geolib'
 import * as Exifr from 'exifr'
-import * as Xml from 'xml2js'
 
 const imgixBaseUrl = 'https://panoramat.imgix.net/'
 
@@ -141,27 +140,25 @@ export default {
       }
       return result
     },
-    northOffset () {
+    offset () {
       return 0
     }
   },
   mounted () {
     let parseAsync = source => {
       return Exifr.parse(source, { xmp: true, tiff: false })
-        .then(xml => Xml.parseStringPromise(xml.xmp))
-        .then(json => json['x:xmpmeta']['rdf:RDF'][0]['rdf:Description'][0]['$'])
         .then(data => {
           return {
             [source]: {
               gps: {
-                latitude: Number(data['drone-dji:GpsLatitude']),
-                longitude: Number(data['drone-dji:GpsLongitude']),
-                altitude: Number(data['drone-dji:AbsoluteAltitude'])
+                latitude: Number(data['GpsLatitude']),
+                longitude: Number(data['GpsLongitude']),
+                altitude: Number(data['AbsoluteAltitude'])
               },
               gimbal: {
-                pitch: Number(data['drone-dji:GimbalPitchDegree']),
-                yaw: Number(data['drone-dji:GimbalYawDegree']),
-                roll: Number(data['drone-dji:GimbalRollDegree'])
+                pitch: Number(data['GimbalPitchDegree']),
+                yaw: Number(data['GimbalYawDegree']),
+                roll: Number(data['GimbalRollDegree'])
               }
             }
           }
