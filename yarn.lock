@@ -18,7 +18,7 @@
     invariant "^2.2.4"
     semver "^5.5.0"
 
-"@babel/core@^7.5.5", "@babel/core@^7.8.4":
+"@babel/core@^7.8.4", "@babel/core@^7.9.0":
   version "7.10.3"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.10.3.tgz#73b0e8ddeec1e3fdd7a2de587a60e17c440ec77e"
   integrity sha512-5YqWxYE3pyhIi84L84YcwjeEgS+fa7ZjK6IBVGTjDVfm64njkR2lfDhVR5OudLk8x2GK59YoSyVv+L/03k1q9w==
@@ -685,7 +685,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.1"
 
-"@babel/plugin-transform-runtime@^7.5.5":
+"@babel/plugin-transform-runtime@^7.9.0":
   version "7.10.3"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.10.3.tgz#3b287b06acc534a7cb6e6c71d6b1d88b1922dd6c"
   integrity sha512-b5OzMD1Hi8BBzgQdRHyVVaYrk9zG0wset1it2o3BgonkPadXfOv0aXRqd7864DeOIu3FGKP/h6lr15FE5mahVw==
@@ -747,7 +747,7 @@
     "@babel/helper-create-regexp-features-plugin" "^7.10.1"
     "@babel/helper-plugin-utils" "^7.10.1"
 
-"@babel/preset-env@^7.5.5", "@babel/preset-env@^7.8.4":
+"@babel/preset-env@^7.8.4", "@babel/preset-env@^7.9.0":
   version "7.10.3"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.10.3.tgz#3e58c9861bbd93b6a679987c7e4bd365c56c80c9"
   integrity sha512-jHaSUgiewTmly88bJtMHbOd1bJf2ocYxb5BWKSDQIP5tmgFuS/n0gl+nhSrYDhT33m0vPxp+rP8oYYgPgMNQlg==
@@ -828,7 +828,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.0":
   version "7.10.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.3.tgz#670d002655a7c366540c67f6fd3342cd09500364"
   integrity sha512-RzGO0RLSdokm9Ipe/YD+7ww8X2Ro79qiXZF3HU9ljrM+qnJmH1Vqth+hbiQZy761LnMJTMitHDuKVYTk3k4dLw==
@@ -957,12 +957,12 @@
   resolved "https://registry.yarnpkg.com/@positron/stack-trace/-/stack-trace-1.0.0.tgz#14fcc712a530038ef9be1ce6952315a839f466a8"
   integrity sha1-FPzHEqUwA475vhzmlSMVqDn0Zqg=
 
-"@quasar/app@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@quasar/app/-/app-2.0.0.tgz#f91d89e854376e8736baab2d30b2c5fba6935412"
-  integrity sha512-XOD7Nj9vAzJvmpt8cdqwE5WXh2tFdnOPYPrkoUStsufu8R3dJxabn/9WbNHSr3wmRfvDImftb2MfDQADrBHu6Q==
+"@quasar/app@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@quasar/app/-/app-2.0.1.tgz#3286503dd9cf49a3ca73dac986e5ace2e72417a3"
+  integrity sha512-nQtmZibJpzBl45uIkj9iyrBHYkyF6OWZmU0imZooMSTSk+Y1aaG5EgJ2SB+E2TRuiToy6y4bRO8gRvynk+fmnQ==
   dependencies:
-    "@quasar/babel-preset-app" "2.0.0"
+    "@quasar/babel-preset-app" "2.0.1"
     "@quasar/fastclick" "1.1.4"
     "@types/cordova" "0.0.34"
     "@types/electron-packager" "14.0.0"
@@ -1040,12 +1040,12 @@
     yargs "15.3.1"
     zlib "1.0.5"
 
-"@quasar/babel-preset-app@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@quasar/babel-preset-app/-/babel-preset-app-2.0.0.tgz#b72a0241c928bb6c55644ada213a54137b822692"
-  integrity sha512-xkpsM4cytEJbFbDIu18GYf4yM9pGMOmc4pZ8rqjMLsoTEQKK8LF9HoaG14yp63y2NvY5h8COMx08EQCs4k98yw==
+"@quasar/babel-preset-app@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@quasar/babel-preset-app/-/babel-preset-app-2.0.1.tgz#94bce6e6d4feef399b4114ccbe1b2b36abe9d3d3"
+  integrity sha512-Eiu8B2rFl3nEvA+PYaybcXknkXcgVy//OqM7+f5fu3UEVw050/JyHBsrnBOMc+muon16Og1RKxOVmQuAWDS1hA==
   dependencies:
-    "@babel/core" "^7.5.5"
+    "@babel/core" "^7.9.0"
     "@babel/helper-compilation-targets" "^7.9.6"
     "@babel/helper-module-imports" "^7.8.3"
     "@babel/plugin-proposal-class-properties" "^7.5.5"
@@ -1057,9 +1057,9 @@
     "@babel/plugin-proposal-throw-expressions" "^7.2.0"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
     "@babel/plugin-syntax-import-meta" "^7.2.0"
-    "@babel/plugin-transform-runtime" "^7.5.5"
-    "@babel/preset-env" "^7.5.5"
-    "@babel/runtime" "^7.5.5"
+    "@babel/plugin-transform-runtime" "^7.9.0"
+    "@babel/preset-env" "^7.9.0"
+    "@babel/runtime" "^7.9.0"
     babel-loader "^8.0.6"
     babel-plugin-dynamic-import-node "^2.3.0"
     babel-plugin-module-resolver "^4.0.0"
