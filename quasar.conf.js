@@ -90,7 +90,11 @@ module.exports = function (ctx) {
     // https://quasar.dev/quasar-cli/developing-pwa/configuring-pwa
     pwa: {
       // workboxPluginMode: 'InjectManifest',
-      // workboxOptions: {}, // only for NON InjectManifest
+      workboxOptions: {
+        skipWaiting: true,
+        clientsClaim: true,
+        maximumFileSizeToCacheInBytes: 1048576
+      }, // only for NON InjectManifest
       manifest: {
         // name: 'PanoramAt',
         // short_name: 'PanoramAt',
