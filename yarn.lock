@@ -4078,10 +4078,10 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-exifr@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/exifr/-/exifr-5.0.3.tgz#700e6a0543e20f4ea88a286250232cbc2d98b6cb"
-  integrity sha512-vC90Lop0cBj5k9V18qHV6lzf/O1lWOlcHXn9r0Ueh4bTZnr+HV4QKFXPSR1v87sq6BBTFAgXrF/ZfeWBAwBcFQ==
+exifr@^5.0.5:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/exifr/-/exifr-5.0.5.tgz#34234a9da722ec8ee743e0ae86f3e95cce4fde83"
+  integrity sha512-7gD1DYivp5ygbhFN8486qmAWiAJnTyRpe76SNVSdK7NamACLTzBdzXg2OL2ZIZIBBlpFQgSFE7Y0j4oka5IrhQ==
 
 expand-brackets@^2.1.4:
   version "2.1.4"
