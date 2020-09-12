@@ -10,7 +10,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@fsenn/vue-pannellum": "^0.6.0",
+    "@fsenn/vue-pannellum": "^0.6.5",
     "@quasar/extras": "^1.9.5",
     "@sentry/browser": "^5.23.0",
     "@sentry/integrations": "^5.22.3",

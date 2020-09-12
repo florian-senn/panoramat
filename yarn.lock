@@ -908,10 +908,10 @@
     global-agent "^2.0.2"
     global-tunnel-ng "^2.7.1"
 
-"@fsenn/vue-pannellum@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@fsenn/vue-pannellum/-/vue-pannellum-0.6.0.tgz#ffbd4da1d43a2b42cd27f106a46a1aa4f769b5cd"
-  integrity sha512-s8P/irQAEYqNWSiS2Xe1HA6p/KSdXh4ajpmSwD4SoiEJSrEYJfcQWOaFCm+sZZNDBZLy7RtyQqkM0DPtv1Mtrg==
+"@fsenn/vue-pannellum@^0.6.5":
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/@fsenn/vue-pannellum/-/vue-pannellum-0.6.5.tgz#4279262be5e0accdd43a12a6b064543540b2b7ba"
+  integrity sha512-Rm3oCHagtxGpdGpJKwoygf9Iva+bAmQY+YvekwkKiYB2iGbbUzlTfVy9URJOxxbT4OjJ4rGjm1Tn+pQ1hDw1cg==
   dependencies:
     lodash.debounce "^4.0.8"
     pannellum "^2.5.2"
