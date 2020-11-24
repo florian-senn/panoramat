@@ -1,7 +1,14 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
-  failed: 'Action failed',
-  success: 'Action was successful'
+  language: 'Language',
+  title: 'PanoramAT',
+  failed: 'failed',
+  success: 'success',
+  next: 'next',
+  previous: 'previous',
+  quality: 'image quality',
+  resolution: 'image resolution',
+  yaw: 'left/right',
+  pitch: 'up/down',
+  hfov: 'field of view',
+  locale: 'language'
 }

@@ -21,23 +21,23 @@
       />
       <div class="q-pa-md">
         <q-badge>
-          {{$t('hfov')}}: {{hfov|round}}
+          {{ $t('hfov') }}: {{ hfov|round }}
         </q-badge>
         <q-slider :step="0.1" label v-model="hfov" :min="30" :max="120"/>
         <q-badge>
-          {{$t('pitch')}}: {{pitch|round}}
+          {{ $t('pitch') }}: {{ pitch|round }}
         </q-badge>
         <q-slider :step="0.1" label v-model="pitch" :min="-90" :max="90"/>
         <q-badge>
-          {{$t('yaw')}}: {{yaw|round}}
+          {{ $t('yaw') }}: {{ yaw|round }}
         </q-badge>
         <q-slider :step="0.1" label v-model="yaw" :min="-180" :max="180"/>
         <q-badge>
-          {{$t('resolution')}}: {{resolution}}
+          {{ $t('resolution') }}: {{ resolution }}
         </q-badge>
         <q-slider :step="0.1" label v-model="resolution" :min="0.2" :max="1"/>
         <q-badge>
-          {{$t('quality')}}: {{quality}}
+          {{ $t('quality') }}: {{ quality }}
         </q-badge>
         <q-slider :step="10" label v-model="quality" :min="30" :max="100"/>
       </div>
@@ -65,17 +65,37 @@ export default {
   data () {
     return {
       sources: [
-        'panorama/panorama1.jpg',
-        'panorama/panorama2.jpg',
-        'panorama/panorama3.jpg',
-        'panorama/pan1.jpg',
-        'panorama/pan1.jpg',
-        'panorama/pan2.jpg',
-        'panorama/pan3.jpg',
-        'panorama/pan4.jpg',
-        'panorama/pan5.jpg',
-        'panorama/pano1.jpg',
-        'panorama/pano2.jpg'
+        { path: 'panorama/panorama1.jpg' },
+        {
+          path: 'panorama/panorama2.jpg'
+        },
+        {
+          path: 'panorama/panorama3.jpg'
+        },
+        {
+          path: 'panorama/pan1.jpg'
+        },
+        {
+          path: 'panorama/pan1.jpg'
+        },
+        {
+          path: 'panorama/pan2.jpg'
+        },
+        {
+          path: 'panorama/pan3.jpg'
+        },
+        {
+          path: 'panorama/pan4.jpg'
+        },
+        {
+          path: 'panorama/pan5.jpg'
+        },
+        {
+          path: 'panorama/pano1.jpg'
+        },
+        {
+          path: 'panorama/pano2.jpg'
+        }
       ],
       hfov: 120,
       pos: 0,
@@ -108,7 +128,7 @@ export default {
       return this.srcToImgix(this.rawSrc, this.suffix)
     },
     rawSrc: function () {
-      return this.sources[this.getPos]
+      return this.sources[this.getPos].path
     },
     getPos: function () {
       return (this.pos.mod(this.sources.length))
@@ -146,10 +166,10 @@ export default {
   },
   mounted () {
     let parseAsync = source => {
-      return Exifr.parse(source, { xmp: true, tiff: false })
+      return Exifr.parse(source.path, { xmp: true, tiff: false })
         .then(data => {
           return {
-            [source]: {
+            [source.path]: {
               gps: {
                 latitude: Number(data['GpsLatitude']),
                 longitude: Number(data['GpsLongitude']),

@@ -1,4 +1,5 @@
 export default {
+  language: 'Sprache',
   title: 'PanoramAT',
   failed: 'Fehlgeschlagen',
   success: 'Erfolgreich',
