@@ -13,7 +13,7 @@
     "@fsenn/vue-pannellum": "^0.6.5",
     "@quasar/extras": "^1.9.10",
     "@sentry/browser": "^5.28.0",
-    "@sentry/integrations": "^5.27.4",
+    "@sentry/integrations": "^5.28.0",
     "axios": "^0.21.0",
     "exifr": "^6.0.0",
     "geolib": "^3.3.1",
