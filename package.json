@@ -17,7 +17,7 @@
     "axios": "^0.21.0",
     "exifr": "^6.0.0",
     "geolib": "^3.3.1",
-    "quasar": "^1.14.5",
+    "quasar": "^1.14.7",
     "vue-i18n": "^8.22.2"
   },
   "devDependencies": {
