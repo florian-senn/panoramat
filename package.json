@@ -11,24 +11,24 @@
   },
   "dependencies": {
     "@fsenn/vue-pannellum": "^0.6.5",
-    "@quasar/extras": "^1.9.10",
-    "@sentry/browser": "^5.27.6",
-    "@sentry/integrations": "^5.27.4",
-    "axios": "^0.21.0",
+    "@quasar/extras": "^1.9.11",
+    "@sentry/browser": "^5.29.2",
+    "@sentry/integrations": "^5.29.0",
+    "axios": "^0.21.1",
     "exifr": "^6.0.0",
     "geolib": "^3.3.1",
-    "quasar": "^1.14.5",
+    "quasar": "^1.14.7",
     "vue-i18n": "^8.22.2"
   },
   "devDependencies": {
-    "@quasar/app": "2.1.8",
+    "@quasar/app": "2.1.13",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.14.0",
+    "eslint": "^7.16.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-vue": "^7.0.1",
+    "eslint-plugin-vue": "^7.2.0",
     "quasar-app-extension-ide-helper": "^1.0.0",
-    "workbox-webpack-plugin": "5.1.4"
+    "workbox-webpack-plugin": "6.0.2"
   },
   "optionalDependencies": {},
   "engines": {
