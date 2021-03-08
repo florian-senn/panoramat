@@ -3982,10 +3982,10 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-exifr@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/exifr/-/exifr-6.0.0.tgz#e82af10e158852a1c7e19aea45bceb4cdd486727"
-  integrity sha512-a8n3SVIyuI5NP5VJCb/rJHsqXnofgYL1ZXcJdKBXOmCNIrj+pSExaBFHcbdEF5xp5GQrK4kpOabLJ+wBfUGYuA==
+exifr@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/exifr/-/exifr-6.1.0.tgz#ba193619e3e59ab598cceab7353414bb804a4938"
+  integrity sha512-fZPE1aHPH3LshQCBadtlpsWWGMTIAg/npz8Je1QqcVcFCz3ZC7QQWA9r4UnDiU7fw4eeVyP0qWJh4mYqCNEzxA==
 
 exit-on-epipe@~1.0.1:
   version "1.0.1"
