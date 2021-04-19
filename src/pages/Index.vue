@@ -95,6 +95,18 @@ export default {
         },
         {
           path: 'panorama/pano2.jpg'
+        },
+        {
+          path: 'panorama/DJI_0263.jpg'
+        },
+        {
+          path: 'panorama/DJI_0273.jpg'
+        },
+        {
+          path: 'panorama/DJI_0275.jpg'
+        },
+        {
+          path: 'panorama/DJI_0325.jpg'
         }
       ],
       hfov: 120,
