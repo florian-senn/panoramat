@@ -12,13 +12,13 @@
   "dependencies": {
     "@fsenn/vue-pannellum": "^0.6.5",
     "@quasar/extras": "^1.9.11",
-    "@sentry/browser": "^6.2.2",
-    "@sentry/integrations": "^6.1.0",
+    "@sentry/browser": "^6.2.5",
+    "@sentry/integrations": "^6.2.5",
     "axios": "^0.21.1",
-    "exifr": "^6.0.0",
+    "exifr": "^6.2.0",
     "geolib": "^3.3.1",
-    "quasar": "^1.14.7",
-    "vue-i18n": "^8.22.2"
+    "quasar": "^1.15.10",
+    "vue-i18n": "^8.24.3"
   },
   "devDependencies": {
     "@quasar/app": "2.1.13",

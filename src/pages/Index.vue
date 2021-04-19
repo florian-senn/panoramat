@@ -41,6 +41,7 @@
         </q-badge>
         <q-slider :step="10" label v-model="quality" :min="30" :max="100"/>
       </div>
+      s
     </div>
   </q-page>
 </template>
@@ -48,7 +49,7 @@
 <script>
 import VuePannellum from '@fsenn/vue-pannellum'
 import { getGreatCircleBearing, getPreciseDistance } from 'geolib'
-import * as Exifr from 'exifr'
+import Exifr from 'exifr'
 
 const imgixBaseUrl = 'https://panoramat.imgix.net/'
 
@@ -97,16 +98,16 @@ export default {
           path: 'panorama/pano2.jpg'
         },
         {
-          path: 'panorama/DJI_0263.jpg'
+          path: 'panorama/DJI_0263.JPG'
         },
         {
-          path: 'panorama/DJI_0273.jpg'
+          path: 'panorama/DJI_0273.JPG'
         },
         {
-          path: 'panorama/DJI_0275.jpg'
+          path: 'panorama/DJI_0275.JPG'
         },
         {
-          path: 'panorama/DJI_0325.jpg'
+          path: 'panorama/DJI_0325.JPG'
         }
       ],
       hfov: 120,
