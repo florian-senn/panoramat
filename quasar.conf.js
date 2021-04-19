@@ -52,7 +52,7 @@ module.exports = function (ctx) {
       scopeHoisting: true,
       vueRouterMode: 'history',
       // showProgress: false,
-      // gzip: true,
+      gzip: true,
       // analyze: true,
       // preloadChunks: false,
       // extractCSS: false,
