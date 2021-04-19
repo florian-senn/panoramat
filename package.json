@@ -21,7 +21,7 @@
     "vue-i18n": "^8.24.3"
   },
   "devDependencies": {
-    "@quasar/app": "2.1.13",
+    "@quasar/app": "2.2.4",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.21.0",
