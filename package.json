@@ -12,7 +12,7 @@
   "dependencies": {
     "@fsenn/vue-pannellum": "^0.6.5",
     "@quasar/extras": "^1.9.11",
-    "@sentry/browser": "^6.2.5",
+    "@sentry/browser": "^6.3.1",
     "@sentry/integrations": "^6.2.5",
     "axios": "^0.21.1",
     "exifr": "^6.2.0",
