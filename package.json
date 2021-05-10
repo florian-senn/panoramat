@@ -15,7 +15,7 @@
     "@sentry/browser": "^6.3.5",
     "@sentry/integrations": "^6.2.5",
     "axios": "^0.21.1",
-    "exifr": "^6.3.0",
+    "exifr": "^7.0.0",
     "geolib": "^3.3.1",
     "quasar": "^1.15.13",
     "vue-i18n": "^8.24.4"
