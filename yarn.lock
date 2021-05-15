@@ -3989,10 +3989,10 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-exifr@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/exifr/-/exifr-6.3.0.tgz#ba6a49c0a30372a969d109684e1cd8450a05ba43"
-  integrity sha512-NCSOP15py+4QyvD90etFN0QOVj12ygVE8kfEDG8GDc+SXf9YAOxua2x5kGp6WvxbGjufA5C3r/1ZKHOpHbEWFg==
+exifr@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/exifr/-/exifr-7.0.0.tgz#065d54639f2999ac901dd8475db99b4d3f31f11e"
+  integrity sha512-5JRtopcolAfsX4YGcvTkldXyFDC+VPV40DxhSdRvrDr4OJQHtyccNoYl4aRzYBnVVpNueMmenS0KhzLiyNSfEQ==
 
 exit-on-epipe@~1.0.1:
   version "1.0.1"
