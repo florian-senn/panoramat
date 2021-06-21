@@ -18,7 +18,7 @@
     "exifr": "^7.0.0",
     "geolib": "^3.3.1",
     "quasar": "^1.15.20",
-    "vue-i18n": "^8.24.4"
+    "vue-i18n": "^8.24.5"
   },
   "devDependencies": {
     "@quasar/app": "2.2.10",
