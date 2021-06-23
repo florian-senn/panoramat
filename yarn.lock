@@ -4057,10 +4057,10 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-exifr@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/exifr/-/exifr-7.0.0.tgz#065d54639f2999ac901dd8475db99b4d3f31f11e"
-  integrity sha512-5JRtopcolAfsX4YGcvTkldXyFDC+VPV40DxhSdRvrDr4OJQHtyccNoYl4aRzYBnVVpNueMmenS0KhzLiyNSfEQ==
+exifr@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/exifr/-/exifr-7.1.0.tgz#c6ec7cc1b3d67062d770f959a9f4a0b5d1983df2"
+  integrity sha512-odMxtebgTj8uADzBr5Wja6AnT/wK+NNsfCo3eMiAm7P/LNPoJnCu/6C0j1w0+q4A30/U0s9P1DLB1OJYf0AxYQ==
 
 exit-on-epipe@~1.0.1:
   version "1.0.1"
