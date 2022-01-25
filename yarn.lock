@@ -5955,10 +5955,10 @@ quasar-app-extension-ide-helper@^1.0.0:
   dependencies:
     xml-escape "^1.1.0"
 
-quasar@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.0.2.tgz#fbc82b82204e8f4af72037ddcab07f76b4340287"
-  integrity sha512-Z5ghL4LA8YxkM8HBqmzn3o4HOIbFEgWcwvWRbIcRbNX/NjchyeV7YlgzHyIdOClnAHrJ0szZSItl/2n86k43aw==
+quasar@^2.4.13:
+  version "2.4.13"
+  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.4.13.tgz#e1efc38619de18de9a4b88b3534227224cca0718"
+  integrity sha512-F2RxZrdqjvGWS2OQM1GArkxzC7Zx9q/guzxHyR2KNa3ZqhFOkv3zii1nGk3fRIzhE2+NL4FcS1+U+e9LBPJwug==
 
 querystring@0.2.0:
   version "0.2.0"
