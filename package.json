@@ -28,7 +28,7 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-vue": "^7.13.0",
     "quasar-app-extension-ide-helper": "^1.0.0",
-    "workbox-webpack-plugin": "6.1.5"
+    "workbox-webpack-plugin": "6.5.2"
   },
   "optionalDependencies": {},
   "engines": {
